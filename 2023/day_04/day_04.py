@@ -50,7 +50,7 @@ lcards = {int(card.split("Card ")[1].replace(" ", "")): [nums] for card, nums in
 
 l_score = []
 for idcard, lmnws in lcards.items() : # all of this part2 for loop is particularly not optimized 
-    print(idcard, len(lcards[idcard])) # I had some printing log to look at progression during code running => I was also looking at htop to see my ram melting like snow in the sun ...
+    print(idcard, len(lcards[idcard])) # I add some printing log to look at progression during code running => I was also looking at htop to see my ram melting like snow in the sun ...
     for (mn, wn) in lmnws: # here I recompute everything everytime because I am not clever under time constraints (｡･･｡)
         score = 0# artefact of part 1 because I'm lazy AF => useless
         ncardsok = 0

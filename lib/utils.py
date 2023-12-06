@@ -10,15 +10,21 @@ def dl_lines(fp="input.txt"):
 
 def dl_blockoflines_str(fp="input.txt"):
     with open(fp, mode="r") as f:
-        data = [n.replace("\n", "") for n in f.readlines()]
-        data = [d.replace("\n", " ") for d in data.split("\n\n")]
+        data = f.read()
+    data = [d.replace("\n", " ") for d in data.split("\n\n")]
     return data
 
 
 def dl_blockoflines_list(fp="input.txt"):
     with open(fp, mode="r") as f:
-        data = [n.replace("\n", "") for n in f.readlines()]
-        data = [d.split("\n") for d in data.split("\n\n")]
+        data = f.read()
+    data = [d.split("\n") for d in data.split("\n\n")]
+    return data
+
+def dl_blockoflines(fp="input.txt"):
+    with open(fp, mode="r") as f:
+        data = f.read()
+    data = [d for d in data.split("\n\n")]
     return data
 
 def get_neighbor(plan, pos=(0,0), dir=(1, 1), dist=1, oob=None):
